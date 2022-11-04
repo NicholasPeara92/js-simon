@@ -17,3 +17,16 @@ function getRndInteger(min, max){
 // ARRAY
 
 const numberArray = [];
+
+// aggiunge 5 numeri casuali all'array
+while (numberArray.length < 5) {
+
+    let numberRandom = getRndInteger(1, 100);
+    if (numberArray.includes(numberRandom) === false) {
+        numberArray.push(numberRandom);
+    }
+}
+console.log(numberArray);
+
+// stampo in HTML i numeri casuali ottenuti precedentemente
+
