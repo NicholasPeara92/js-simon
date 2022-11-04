@@ -44,3 +44,16 @@ setTimeout(function(){
     numberContainer.classList.add("hide-numbers");
     
 }, 30000);
+
+// l'utente inserisce 5 numeri che devono corrispondere ai numeri appena scomparsi
+
+let userNumber;
+let userNumberChoice = [];
+
+setTimeout(function(){
+    for (i = 0; i < 5; i++){
+        userNumber = Number(prompt("Inserisci il numero"));
+        userNumberChoice.push(userNumber);
+    }
+
+}, 31000);
