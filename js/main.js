@@ -12,8 +12,6 @@ function getRndInteger(min, max){
     return Math.floor(Math.random()* (max - min + 1) + min);
 }
 
-
-
 // ARRAY
 
 const numberArray = [];
@@ -45,7 +43,7 @@ for ( let i = 0; i < numberArray.length; i++) {
 setTimeout(function(){
     numberContainer.classList.add("hide-numbers");
     
-}, 3000);
+}, 30000);
 
 // l'utente inserisce 5 numeri che devono corrispondere ai numeri appena scomparsi
 
@@ -60,11 +58,16 @@ setTimeout(function(){
     // ciclo for che aggiunge all'array precedente i numeri indovinati
     for ( let i = 0; i < numberArray.length; i++){
         if (userNumberChoice.includes(numberArray[i])) {
-            console.log(numberArray[i]);
             numbersGuessed.push(numberArray[i]);
         }  
     }
     // inserisco le condizioni di vittoria e di sconfitta
-    alert(`Hai perso! Hai indovinato ${numbersGuessed.length} numeri e sono rispettivamente ${numbersGuessed}`);
-}, 4000);
+    
+    if ( numbersGuessed.length === numberArray.length) {
+        alert("complimenti, hai vinto!")
+        numberContainer.classList.remove("hide-numbers");
+    } else {
+        alert(`Hai perso! Hai indovinato ${numbersGuessed.length} numeri e sono rispettivamente ${numbersGuessed}`);
+    }
+}, 31000);
 
