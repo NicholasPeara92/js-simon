@@ -28,5 +28,12 @@ while (numberArray.length < 5) {
 }
 console.log(numberArray);
 
-// stampo in HTML i numeri casuali ottenuti precedentemente
+// creo contanitore per inserire i numeri stampati
+const numberContainer = document.querySelector(".container");
 
+// stampo in HTML i numeri casuali ottenuti precedentemente
+for ( let i = 0; i < numberArray.length; i++) {
+    let numberList = document.createElement("div");
+    numberList.innerHTML = numberArray[i];
+    numberContainer.append(numberList);
+}
