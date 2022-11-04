@@ -17,6 +17,8 @@ function getRndInteger(min, max){
 // ARRAY
 
 const numberArray = [];
+let userNumberChoice = [];
+const numbersGuessed = [];
 
 // aggiunge 5 numeri casuali all'array
 while (numberArray.length < 5) {
@@ -43,12 +45,11 @@ for ( let i = 0; i < numberArray.length; i++) {
 setTimeout(function(){
     numberContainer.classList.add("hide-numbers");
     
-}, 30000);
+}, 3000);
 
 // l'utente inserisce 5 numeri che devono corrispondere ai numeri appena scomparsi
 
 let userNumber;
-let userNumberChoice = [];
 
 setTimeout(function(){
     for (i = 0; i < 5; i++){
@@ -56,4 +57,14 @@ setTimeout(function(){
         userNumberChoice.push(userNumber);
     }
 
-}, 31000);
+    // ciclo for che aggiunge all'array precedente i numeri indovinati
+    for ( let i = 0; i < numberArray.length; i++){
+        if (userNumberChoice.includes(numberArray[i])) {
+            console.log(numberArray[i]);
+            numbersGuessed.push(numberArray[i]);
+        }  
+    }
+    // inserisco le condizioni di vittoria e di sconfitta
+    alert(`Hai perso! Hai indovinato ${numbersGuessed.length} numeri e sono rispettivamente ${numbersGuessed}`);
+}, 4000);
+
