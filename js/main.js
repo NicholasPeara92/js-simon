@@ -37,3 +37,10 @@ for ( let i = 0; i < numberArray.length; i++) {
     numberList.innerHTML = numberArray[i];
     numberContainer.append(numberList);
 }
+
+// creo timeout il cui termine nasconde i numeri stampati
+
+setTimeout(function(){
+    numberContainer.classList.add("hide-numbers");
+    
+}, 30000);
