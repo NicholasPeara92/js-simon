@@ -57,7 +57,7 @@ setTimeout(function(){
 
     // ciclo for che aggiunge all'array precedente i numeri indovinati
     for ( let i = 0; i < numberArray.length; i++){
-        if (userNumberChoice.includes(numberArray[i])) {
+        if (userNumberChoice.includes(numberArray[i]) && !numbersGuessed.includes(numberArray[i])) {
             numbersGuessed.push(numberArray[i]);
         }  
     }
